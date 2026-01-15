@@ -15,6 +15,6 @@ interface JournalRepository {
 
     suspend fun addEntry(content: String)
 
-    // TODO: This method checks if there is an entry for the day.
+    // TODO: Write the logic to check if there is an entry for the day in this method.
     suspend fun hasEntryForToday(): Boolean
 }
