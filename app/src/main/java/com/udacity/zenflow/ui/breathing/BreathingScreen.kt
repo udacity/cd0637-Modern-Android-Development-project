@@ -15,9 +15,22 @@ fun BreathingScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
+    // Pass the state and events to the stateless "Content" composable.
+    BreathingScreenContent(
+        uiState = uiState,
+        onToggleSession = { viewModel.toggleSession() }
+    )
+}
+
+// TODO: Implement this "Stateless" composable.
+// separation of concerns allows us to test the UI without needing a real ViewModel.
+@Composable
+fun BreathingScreenContent(
+    uiState: BreathingUiState,
+    onToggleSession: () -> Unit
+) {
     // TODO: Define your Animation State here.
-    // Hint: Use 'animateFloatAsState' or 'Animatable' to drive the visual changes.
-    // The animation should react to 'uiState.phase'.
+    // Hint: Use 'animateFloatAsState' or 'Animatable' to drive visual changes based on 'uiState.phase'.
 
     Box(
         modifier = Modifier.fillMaxSize(),

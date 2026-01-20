@@ -1,11 +1,12 @@
 package com.udacity.zenflow.di
 
 import android.content.Context
-import androidx.room.Room
 import com.udacity.zenflow.data.JournalDao
 import com.udacity.zenflow.data.JournalRepository
 import com.udacity.zenflow.data.RoomJournalRepository
 import com.udacity.zenflow.data.ZenFlowDatabase
+import com.udacity.zenflow.util.SystemTimeProvider
+import com.udacity.zenflow.util.TimeProvider
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -17,6 +18,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class AppModule {
+
+    @Binds
+    abstract fun bindTimeProvider(
+        impl: SystemTimeProvider
+    ): TimeProvider
 
     // TODO: This connects your Interface (JournalRepository) to your Implementation (RoomJournalRepository).
     @Binds

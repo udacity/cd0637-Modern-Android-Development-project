@@ -6,8 +6,6 @@ import kotlinx.coroutines.flow.Flow
  * Interface defining the contract for data operations.
  *
  * TODO: Feel free to modify this contract if your architectural pattern requires it.
- * For example, if you want to implement a "Search" feature or "Delete" feature,
- * you should define those methods here first.
  */
 interface JournalRepository {
 
